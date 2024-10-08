@@ -28,6 +28,40 @@ p {
      font-size: 15px;
 }
 
+a {
+     text-decoration: none;
+     position: relative;
+     transition: opacity 300ms ease;
+}
+
+i:hover {
+     color: blue;
+     opacity: 0.7;
+}
+
+.link-hover-effect:after {
+     content: "";
+     position: absolute;
+     height: 3.5px;
+     width: 0px;
+     bottom: -3px;
+     right: 0;
+     transition: all 300ms ease;
+}
+
+.link-hover-effect-white:after {
+     background-color: white;
+}
+
+.link-hover-effect-black:after {
+     background-color: black;
+}
+
+.link-hover-effect:hover:after {
+     width: 100%;
+     left: 0;
+}
+
 li {
      list-style-type: none;
 }
@@ -48,6 +82,7 @@ li {
      width: 100%;
      max-width: 800px;
      margin: 0 auto;
+     padding: 0 12px;
 }
 
 .text-purple {
@@ -55,7 +90,7 @@ li {
 }
 
 section:nth-child(even) {
-     background-color: #f8f8f8;
+     background-color: #e9e9e1;
 }
 
 .section-title {
@@ -72,6 +107,7 @@ nav {
      display: flex;
      justify-content: space-between;
      align-items: center;
+     padding: 0 12px;
 }
 
 .nav-link-list {
@@ -81,7 +117,6 @@ nav {
 .nav-link-anchor {
      margin: 0 12px;
      color: black;
-     text-decoration: none;
      font-weight: 700;
 }
 
@@ -134,6 +169,21 @@ nav {
      overflow: hidden;
      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
      margin-bottom: 28px;
+     animation: animate-profile-picture 800ms 200ms backwards;
+}
+
+@keyframes animate-profile-picture {
+     0% {
+          transform: scale(0)
+     }
+
+     80% {
+          tranform: scale(1.1);
+     }
+
+     100% {
+          transform: scale(1.1);
+     }
 }
 
 .about-me-picture {
@@ -145,19 +195,36 @@ nav {
 }
 
 .about-me-info-title {
-     font-size: 16px;
+     margin-bottom: 16px;
+     animation: fade-up 650ms 400ms backwards;
 }
 
 .about-me-info-para {
      font-size: 20px;
      margin-bottom: 28px;
+     animation: fade-up 650ms 600ms backwards;
 }
 
 .about-me-link {
      font-size: 20px;
      color: #242424;
-     text-decoration: none;
      padding: 0 16px;
+}
+
+.about-me-links {
+     animation: fade-up 650ms 800ms backwards;
+}
+
+@keyframes fade-up {
+     0% {
+          opacity: 0;
+          transform: translateY(40px);
+     }
+
+     100% {
+          opacity: 1;
+          transform: translateY(0);
+     }
 }
 
 .about-me-img-container {
@@ -170,6 +237,37 @@ nav {
      width: 100%;
      margin-top: 50px;
      margin-bottom: 50px;
+     animation: fade-up 650ms 400ms backwards;
+}
+
+@keyframes fade-in {
+     0% {
+          opacity: 0;
+     }
+
+     100% {
+          opacity: 1;
+     }
+
+}
+
+.wave {
+     display: inline-block;
+     animation: animate-wave 500ms infinite ease-in-out;
+}
+
+@keyframes animate-wave {
+     0% {
+          transform: rotate(0);
+     }
+
+     50% {
+          transform: rotate(30deg);
+     }
+
+     100% {
+          transform: rotate(0);
+     }
 }
 
 /* Tect - Stack */
@@ -177,15 +275,215 @@ nav {
 .language-img {
      width: 100%;
      max-width: 100px;
+     transition: all 300ms
+}
+
+.language-img:hover {
+     filter: brightness(80%);
+     opacity: 0.86;
+     transform: scale(0.9);
+}
+
+.language {
+     width: 25%;
+     display: flex;
+     justify-content: center;
+     position: relative;
 }
 
 .language-img-wrapper {
      display: flex;
      justify-content: center;
      align-items: center;
+     padding: 25px 16px;
 }
 
 .language-list {
      display: flex;
      width: 100%;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+
+.language-name {
+     position: absolute;
+     bottom: 0;
+     transform: scale(0);
+}
+
+.language:hover .language-name {
+     transform: scale(1);
+}
+
+.project {
+     margin-bottom: 135px;
+}
+
+.project:last-child {
+     margin-bottom: 40px;
+}
+
+.project-img {
+     width: 100%;
+     transition: all 500ms ease;
+}
+
+.project-wrapper {
+     display: flex;
+     box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+     border-radius: 20px;
+     overflow: hidden;
+     position: relative;
+}
+
+.project-wrapper::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background-color: #1c1d25;
+     opacity: 0;
+     transition: 450ms ease;
+     z-index: 2;
+}
+
+.project:hover .project-wrapper::before {
+     opacity: 0.7;
+}
+
+.project:hover .project-img {
+     transform: scale(1.07);
+     filter: blur(5px);
+}
+
+.project:hover .project-description {
+     opacity: 1;
+     transform: translateY(-50%);
+}
+
+.project-list {
+     padding-top: 40px;
+}
+
+.project-description {
+     position: absolute;
+     top: 50%;
+     left: 90px;
+     transform: translateY(100%);
+     max-width: 550px;
+     z-index: 3;
+     opacity: 0;
+     transition: transform 450ms, opacity 300ms;
+}
+
+.project-description-title {
+     font-size: 40px;
+}
+
+.project-description-para {
+     margin: 16px 0;
+}
+
+.project-description-link {
+     font-size: 20px;
+     margin-right: 16px;
+}
+
+.project-description-title,
+.project-description-sub-title,
+.project-description-para,
+.project-description-link {
+     text-align: left;
+     color: #ffff;
+}
+
+footer {
+     background-color: #3b3737;
+}
+
+.footer-social-list {
+     width: 100%;
+     max-width: 500px;
+     margin-bottom: 28px;
+     display: flex;
+     justify-content: space-around;
+}
+
+.footer-row {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 3% 0;
+}
+
+.footer-logo-img {
+     width: 150px;
+     height: 150px;
+}
+
+.footer-social-link,
+.footer-copyright {
+     color: #ffff;
+}
+
+@media (max-width: 768px) {
+     nav {
+          height: 68px;
+     }
+
+     h1 {
+          font-size: 28px;
+     }
+
+     .about-me-info-para {
+          font-size: 18px;
+     }
+
+     .language {
+          width: calc(100% / 2);
+     }
+
+     .project-description-para {
+          font-size: 14px;
+     }
+
+     .project-description {
+          left: 30px;
+          padding-top: 30px;
+     }
+}
+
+@media (max-width: 480px) {
+     .nav-link:not(:last-child) {
+          display: none;
+     }
+
+     .project-description {
+          padding: 0;
+          left: 0;
+          width: 100%;
+     }
+
+     .project-description-para {
+          display: none;
+     }
+
+     .project-description-links {
+          display: flex;
+          justify-content: center;
+     }
+
+     .project-description-title {
+          font-size: 32px;
+          line-height: 1;
+          text-align: center;
+     }
+
+     .project-description-sub-title {
+          text-align: center;
+          margin: 12px 0;
+     }
 }
