@@ -7,6 +7,7 @@
   <title>Zeel Patel</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/c5c80b9ccc.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
 </head>
 
 <body>
@@ -21,9 +22,39 @@
           <a href="#projects" class="nav-link-anchor link-hover-effect link-hover-effect-black">Projects</a>
         </li>
         <li class="nav-link">
+          <a href="#" class="nav-link-anchor link-hover-effect link-hover-effect-black">Education</a>
+        </li>
+        <li class="nav-link">
           <a href="mailto:zeelp2026@gmail.com" class="nav-link-anchor nav-link-anchor-primary">Contact</a>
         </li>
       </ul>
+
+      <button class="btn-menu" onclick="openMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="menu-backdrop">
+        <button class="btn-menu btn-menu-close" onclick="closeMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="menu-links">
+          <li class="menu-list">
+            <a href="#" class="menu-link">Home</a>
+          </li>
+          <li class="menu-list">
+            <a href="#languages" class="menu-link">Languages</a>
+          </li>
+          <li class="menu-list">
+            <a href="#projects" class="menu-link">Projects</a>
+          </li>
+          <li class="menu-list">
+            <a href="#education" class="menu-link">Education</a>
+          </li>
+          <li class="menu-list">
+            <a href="mailto:zeelp2026@gmail.com" class="menu-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+
     </nav>
     <div>
       <div class="flex flex-1">
@@ -120,7 +151,8 @@
               <div class="project-description">
                 <h3 class="project-description-title">Online Library Project</h3>
                 <h4 class="project-description-sub-title">HTML, CSS, & JS</h4>
-                <p class="project-description-para">"A comprehensive library website providing users with easy access to book listings, and a user-friendly interface for borrowing and managing library resources online."</p>
+                <p class="project-description-para">"A comprehensive library website providing users with easy access to
+                  book listings, and a user-friendly interface for borrowing and managing library resources online."</p>
                 <div class="project-description-links">
                   <a href="https://github.com/Zeel200/E-Commerce" target="_blank" class="project-description-link">
                     <i class="fab fa-github"></i>
@@ -138,7 +170,10 @@
               <div class="project-description">
                 <h3 class="project-description-title">Netflix Clone</h3>
                 <h4 class="project-description-sub-title">HTML & CSS</h4>
-                <p class="project-description-para">I have developed a Netflix clone website, replicating the user interface of the popular streaming platform. The site features responsive design, smooth navigation, and showcases content categories. It mimics the Netflix experience with a clean and modern layout, built using HTML, CSS.</p>
+                <p class="project-description-para">I have developed a Netflix clone website, replicating the user
+                  interface of the popular streaming platform. The site features responsive design, smooth navigation,
+                  and showcases content categories. It mimics the Netflix experience with a clean and modern layout,
+                  built using HTML, CSS.</p>
                 <div class="project-description-links">
                   <a href="https://github.com/Zeel200/netflix" target="_blank" class="project-description-link">
                     <i class="fab fa-github"></i>
@@ -146,6 +181,30 @@
                 </div>
               </div>
             </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="row">
+        <h1 class="section-title">My <span class="text-purple">Academic</span> Qualification</h1>
+        <ul class="education-list">
+          <li class="education">
+            <div class="education-wrapper">
+              <img src="./assets/ru.jpg" class="education-img" alt="">
+            </div>
+            <h3 class="education-title">Bachelor's of science in Computer Science</h3>
+            <h4 class="education-sub-title">(Jan 2023 - Jan 2025)</h4>
+          </li>
+          <li class="education">
+            <div class="education-wrapper">
+              <img src="./assets/mcc.png" class="education-img" alt="">
+            </div>
+            <h3 class="education-title">Associate in Science in Computer Science</h3>
+            <h4 class="education-sub-title">(Jul 2020 - Dec 2022)</h4>
           </li>
         </ul>
       </div>
